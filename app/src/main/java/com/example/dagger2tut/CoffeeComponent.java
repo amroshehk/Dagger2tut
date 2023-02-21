@@ -1,5 +1,7 @@
 package com.example.dagger2tut;
 
+import javax.inject.Named;
+
 import dagger.BindsInstance;
 import dagger.Component;
 
@@ -11,7 +13,9 @@ public interface CoffeeComponent {
     @Component.Builder
     interface Builder {
         @BindsInstance
-        Builder suger(int suger);
+        Builder suger(@Suger int suger);
+        @BindsInstance
+        Builder milk(@Milk int milk);
         CoffeeComponent build();
     }
 }
